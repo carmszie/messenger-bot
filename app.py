@@ -13,7 +13,7 @@ app = Flask(__name__)
 PAGE_ACCESS_TOKEN = os.getenv("PAGE_ACCESS_TOKEN")
 VERIFY_TOKEN      = os.getenv("VERIFY_TOKEN")
 SPREADSHEET_ID    = os.getenv("SPREADSHEET_ID")
-CREDENTIALS_FILE  = "credentials.json"
+CREDENTIALS_FILE = "/etc/secrets/credentials.json" if os.path.exists("/etc/secrets/credentials.json") else "credentials.json"
 
 FALLBACK_MESSAGE  = "Sorry, I didn't quite understand that. 😅 Please choose from the options below or contact us directly!"
 
